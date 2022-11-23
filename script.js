@@ -7,6 +7,8 @@ password = "";
 
 // Declaring variables
 var passwordLength = 0;
+var passwordOptions = "";
+var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 
 // Inputting password length
 while(passwordLength < 8 || passwordLength > 128){
@@ -25,6 +27,14 @@ while(passwordLength < 8 || passwordLength > 128){
     alert("Password must be less than 128 characters.");
   }
 }
+
+//Include Lowercase?
+userChoice = prompt("Would you like to include lowercase letters? (1 = YES, 2 = NO)");
+if(userChoice == 1){
+  passwordOptions += lowercaseLetters;
+}
+
+console.log(passwordOptions);
   
   return password;
 }
