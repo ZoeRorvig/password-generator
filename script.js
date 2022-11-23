@@ -2,9 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  // YOUR CODE GOES HERE
-
-
+// Reset Password
+password = "";
   
   return password;
 }
