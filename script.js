@@ -12,6 +12,8 @@ var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChoices = "0123456789";
 var specialCharacters ="!@#$%^&*()";
+var userChoice = 0;
+var randomPick = "";
 
 // Inputting password length
 while(passwordLength < 8 || passwordLength > 128){
@@ -62,6 +64,12 @@ if(userChoice == 1){
 }
 
 console.log(passwordOptions);
+
+//Generate Password
+for(var i = 0; i < passwordLength; i++){
+  randomPick = Math.floor(Math.random() * passwordOptions.length);
+  password += passwordOptions.substring(randomPick, randomPick +1);
+}
   
   return password;
 }
