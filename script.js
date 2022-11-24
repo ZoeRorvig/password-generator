@@ -12,7 +12,7 @@ var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChoices = "0123456789";
 var specialCharacters ="!@#$%^&*()";
-var userChoice = 0;
+var userChoice = false;
 var randomPick = "";
 
 // Inputting password length
@@ -33,34 +33,34 @@ while(passwordLength < 8 || passwordLength > 128){
   }
 }
 
+//Include Special Characters?
+userChoice = confirm("Click OK to confirm including special characters.");
+if(userChoice == true){
+  passwordOptions += specialCharacters;
+}
+
+console.log(passwordOptions);
+
+//Include Numeric?
+userChoice = confirm("Click OK to confirm including numeric characters.");
+if(userChoice == true){
+  passwordOptions += numberChoices;
+}
+
+console.log(passwordOptions);
+
 //Include Lowercase?
-userChoice = prompt("Would you like to include lowercase letters? (1 = YES, 2 = NO)");
-if(userChoice == 1){
+userChoice = confirm("Click OK to confirm including lowercase characters.");
+if(userChoice == true){
   passwordOptions += lowercaseLetters;
 }
 
 console.log(passwordOptions);
 
 //Include Uppercase?
-userChoice = prompt("Would you like to include uppercase letters? (1 = YES, 2 = NO)");
-if(userChoice == 1){
+userChoice = confirm("Click OK to confirm including uppercase characters.");
+if(userChoice == true){
   passwordOptions += uppercaseLetters;
-}
-
-console.log(passwordOptions);
-
-//Include Numeric?
-userChoice = prompt("Would you like to include numbers? (1 = YES, 2 = NO)");
-if(userChoice == 1){
-  passwordOptions += numberChoices;
-}
-
-console.log(passwordOptions);
-
-//Include Special Characters?
-userChoice = prompt("Would you like to include special characters? (1 = YES, 2 = NO)");
-if(userChoice == 1){
-  passwordOptions += specialCharacters;
 }
 
 console.log(passwordOptions);
