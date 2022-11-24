@@ -10,6 +10,7 @@ var passwordLength = 0;
 var passwordOptions = "";
 var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberChoices = "0123456789";
 
 // Inputting password length
 while(passwordLength < 8 || passwordLength > 128){
@@ -41,6 +42,14 @@ console.log(passwordOptions);
 userChoice = prompt("Would you like to include uppercase letters? (1 = YES, 2 = NO)");
 if(userChoice == 1){
   passwordOptions += uppercaseLetters;
+}
+
+console.log(passwordOptions);
+
+//Include Numeric?
+userChoice = prompt("Would you like to include numbers? (1 = YES, 2 = NO)");
+if(userChoice == 1){
+  passwordOptions += numberChoices;
 }
 
 console.log(passwordOptions);
