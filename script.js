@@ -11,11 +11,12 @@ var passwordOptions = "";
 var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChoices = "0123456789";
+var specialCharacters ="!@#$%^&*()";
 
 // Inputting password length
 while(passwordLength < 8 || passwordLength > 128){
   
-  passwordLength = prompt("Please enter the length of your password (must be at least 8 characters and no more than 128 characters):");
+  passwordLength = prompt("How many characters would you like your password to contain?");
 
 //Checking if what the user entered is a number?
   /*if(typeof passwordLength != "number"){
@@ -24,7 +25,7 @@ while(passwordLength < 8 || passwordLength > 128){
   }*/ 
 
   if(passwordLength < 8){
-    alert("Password must be greater than 8 characters.");
+    alert("Password must be at least 8 characters.");
   }else if(passwordLength > 128){
     alert("Password must be less than 128 characters.");
   }
@@ -50,6 +51,14 @@ console.log(passwordOptions);
 userChoice = prompt("Would you like to include numbers? (1 = YES, 2 = NO)");
 if(userChoice == 1){
   passwordOptions += numberChoices;
+}
+
+console.log(passwordOptions);
+
+//Include Special Characters?
+userChoice = prompt("Would you like to include special characters? (1 = YES, 2 = NO)");
+if(userChoice == 1){
+  passwordOptions += specialCharacters;
 }
 
 console.log(passwordOptions);
