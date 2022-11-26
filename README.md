@@ -10,8 +10,20 @@
 This webpage is used to generate a random password. 
 
 Features Include: 
-- TEXT HERE
-
+- A "Generate Password" button to start the process. 
+- A prompt for the length of the password, which must be between 8 to 128 characters. 
+    - Prompt: "How many characters would you like your password to contain?"
+    - If the length is below 8 characters, it prompts "Password must be at least 8 characters."
+    - If the length is above 128 characters, it prompts "Password must be less than 128 characters."
+- A prompt for including special characters. 
+    - Prompt: "Click OK to confirm including special characters."
+- A prompt for including numeric characters. 
+    - Prompt: "Click OK to confirm including numeric characters."
+- A prompt for including lowercase characters. 
+    - Prompt: "Click OK to confirm including lowercase characters."
+- A prompt for including uppercase characters. 
+    - Prompt: "Click OK to confirm including uppercase characters."
+- A generated password that can be copied and pasted where it's needed. 
 
 ## Visuals 
 
