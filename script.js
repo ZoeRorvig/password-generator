@@ -11,7 +11,7 @@ var passwordOptions = "";
 var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChoices = "0123456789";
-var specialCharacters ="!@#$%^&*()";
+var specialCharacters ="!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var userChoice = false;
 var randomPick = "";
 
