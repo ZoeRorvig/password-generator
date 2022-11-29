@@ -72,8 +72,8 @@ function generatePassword() {
 
   console.log(passwordOptions);
 
-  //Check to make sure characters were selected.
   //Generate Password
+  //Check to make sure characters were selected. If yes, generate password.
   if(passwordOptions === ""){
     password = "No Characters Selected";
     console.log(password);
