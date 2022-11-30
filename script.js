@@ -15,68 +15,70 @@ function generatePassword() {
   var specialCharacters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
   var userChoice = false;
 
-
-  //TODO: must pick at least one character.
-
   //Get the password length.
   passwordLength = prompt("How many characters would you like your password to contain?");
-  console.log(passwordLength);
 
-  if(passwordLength===null) return passwordLength;
+  if(passwordLength === null) return passwordLength;
 
   passwordLength = parseInt(passwordLength);
 
   if(isNaN(passwordLength)) {
     alert("Password must be a valid number.");
     return generatePassword();
-  }
-  else if(passwordLength < 8) {
+  } else if(passwordLength < 8) {
     alert("Password must be at least 8 characters.");
-    
     return generatePassword();
   } else if(passwordLength > 128) {
     alert("Password must be less than 128 characters.");
     return generatePassword();
   }
-  //}
 
-  //Include Special Characters?
-  userChoice = confirm("Click OK to confirm including special characters.");
-  if(userChoice == true) {
-    passwordOptions += specialCharacters;
-  }
+  console.log(passwordLength);
 
-  console.log(passwordOptions);
-
-  //Include Numeric?
-  userChoice = confirm("Click OK to confirm including numeric characters.");
-  if(userChoice == true) {
-    passwordOptions += numbers;
-  }
-
-  console.log(passwordOptions);
-
-  //Include Lowercase?
-  userChoice = confirm("Click OK to confirm including lowercase characters.");
-  if(userChoice == true) {
-    passwordOptions += lowercaseLetters;
-  }
-
-  console.log(passwordOptions);
-
-  //Include Uppercase?
+  //Include Uppercase? If so, selects one random Uppercase Letter to include.
   userChoice = confirm("Click OK to confirm including uppercase characters.");
   if(userChoice == true) {
     passwordOptions += uppercaseLetters;
+    randomPick = Math.floor(Math.random() * uppercaseLetters.length);
+    password += uppercaseLetters[randomPick];
+    passwordLength--;
+  }
+  
+  //Include Lowercase? If so, selects one random Lowercase Letter to include.
+  userChoice = confirm("Click OK to confirm including lowercase characters.");
+  if(userChoice == true) {
+    passwordOptions += lowercaseLetters;
+    randomPick = Math.floor(Math.random() * lowercaseLetters.length);
+    password += lowercaseLetters[randomPick];
+    passwordLength--;
   }
 
+  //Include Special Characters? If so, selects one random Special Character to include.
+  userChoice = confirm("Click OK to confirm including special characters.");
+  if(userChoice == true) {
+    passwordOptions += specialCharacters;
+    randomPick = Math.floor(Math.random() * specialCharacters.length);
+    password += specialCharacters[randomPick];
+    passwordLength--;
+  }
+  
+    //Include Numeric? If so, selects one random Number to include.
+  userChoice = confirm("Click OK to confirm including numeric characters.");
+  if(userChoice == true) {
+    passwordOptions += numbers;
+    randomPick = Math.floor(Math.random() * numbers.length);
+    password += numbers[randomPick];
+    passwordLength--;
+  }
+
+  console.log(password);
   console.log(passwordOptions);
+  console.log(passwordLength);
 
   //Generate Password
   //Check to make sure characters were selected. If yes, generate password.
   if(passwordOptions === ""){
     password = "No Characters Selected";
-    console.log(password);
   }else{
     for(var i = 0; i < passwordLength; i++) {
       randomPick = Math.floor(Math.random() * passwordOptions.length);
@@ -93,7 +95,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
