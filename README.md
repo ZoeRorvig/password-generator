@@ -26,6 +26,7 @@ Features Include:
     - Prompt: "Click OK to confirm including uppercase characters."
 - A generated password that can be copied and pasted where it's needed. 
 - If no characters were selected, "No Characters Selected" is displayed instead of a password.
+- Ensures that at least one of each type (if selected) will be included in the final password. 
 
 ## Visuals 
 
@@ -64,4 +65,8 @@ The following is a screenshot of the popup message for the inclusion of uppercas
 The following is a screenshot of the generated password:
 
 ![screenshot](./images/displayed-password.PNG)
+
+The following is a screenshot of the result if no characters are selected:
+
+![screenshot](./images/no-characters-selected.PNG)
 
