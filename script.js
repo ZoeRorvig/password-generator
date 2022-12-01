@@ -33,8 +33,6 @@ function generatePassword() {
     return generatePassword();
   }
 
-  console.log(passwordLength);
-
   //Include Uppercase? If so, selects one random Uppercase Letter to include.
   userChoice = confirm("Click OK to confirm including uppercase characters.");
   if(userChoice == true) {
@@ -71,10 +69,6 @@ function generatePassword() {
     passwordLength--;
   }
 
-  console.log(password);
-  console.log(passwordOptions);
-  console.log(passwordLength);
-
   //Generate Password
   //Check to make sure characters were selected. If yes, generate password.
   if(passwordOptions === ""){
@@ -83,8 +77,8 @@ function generatePassword() {
     for(var i = 0; i < passwordLength; i++) {
       randomPick = Math.floor(Math.random() * passwordOptions.length);
       password += passwordOptions[randomPick];
+    }
   }
-}
   return password;
 }
 
