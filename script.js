@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// This function generates a random password. 
 function generatePassword() {
   // Reset Password
   password = "";
@@ -15,16 +16,19 @@ function generatePassword() {
   var specialCharacters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
   var userChoice = false;
 
-  //Get the password length.
+  // Get the password length from the user.
   passwordLength = prompt("How many characters would you like your password to contain?");
 
+  // If password length prompt is canceled, exit function.
   if(passwordLength === null) return passwordLength;
 
   passwordLength = parseInt(passwordLength);
 
+  // Checks if any non-numbers were entered.
   if(isNaN(passwordLength)) {
     alert("Password must be a valid number.");
     return generatePassword();
+  // Checks to make sure that the password length is between 8 and 128.
   } else if(passwordLength < 8) {
     alert("Password must be at least 8 characters.");
     return generatePassword();
@@ -33,7 +37,7 @@ function generatePassword() {
     return generatePassword();
   }
 
-  //Include Uppercase? If so, selects one random Uppercase Letter to include.
+  // Include Uppercase? If so, selects one random Uppercase Letter to include.
   userChoice = confirm("Click OK to confirm including uppercase characters.");
   if(userChoice == true) {
     passwordOptions += uppercaseLetters;
@@ -42,7 +46,7 @@ function generatePassword() {
     passwordLength--;
   }
   
-  //Include Lowercase? If so, selects one random Lowercase Letter to include.
+  // Include Lowercase? If so, selects one random Lowercase Letter to include.
   userChoice = confirm("Click OK to confirm including lowercase characters.");
   if(userChoice == true) {
     passwordOptions += lowercaseLetters;
@@ -51,7 +55,7 @@ function generatePassword() {
     passwordLength--;
   }
 
-  //Include Special Characters? If so, selects one random Special Character to include.
+  // Include Special Characters? If so, selects one random Special Character to include.
   userChoice = confirm("Click OK to confirm including special characters.");
   if(userChoice == true) {
     passwordOptions += specialCharacters;
@@ -60,7 +64,7 @@ function generatePassword() {
     passwordLength--;
   }
   
-    //Include Numeric? If so, selects one random Number to include.
+  // Include Numeric? If so, selects one random Number to include.
   userChoice = confirm("Click OK to confirm including numeric characters.");
   if(userChoice == true) {
     passwordOptions += numbers;
@@ -69,8 +73,8 @@ function generatePassword() {
     passwordLength--;
   }
 
-  //Generate Password
-  //Check to make sure characters were selected. If yes, generate password.
+  // Generate Password
+  // Check to make sure characters were selected. If yes, generate password.
   if(passwordOptions === ""){
     password = "No Characters Selected";
   }else{
